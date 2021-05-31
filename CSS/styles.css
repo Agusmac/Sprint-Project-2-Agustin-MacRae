@@ -15,7 +15,7 @@ font-family: 'Roboto', sans-serif; */
 }
 body{
   background-color: white;
-
+  transition: 0s;
 }
 .purpleLine{
   height: 5px;
@@ -270,6 +270,7 @@ h3{
   margin: auto;
   padding: 3%;
   overflow: hidden;
+  transition: 0s;
 }
 .carouselP{
   font-family: 'Roboto', sans-serif;

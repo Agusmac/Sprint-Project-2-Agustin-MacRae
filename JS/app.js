@@ -1,3 +1,9 @@
+
+let DAYNIGHTSTATE=localStorage.getItem("dayNightState")|| 0;
+
+
+
+
 const hamburger = document.querySelector(".burguerMenu");
 const mobileMenu = document.querySelector(".mobile-menu");
 // const mobileLinks = document.querySelector(".mobile-links");
@@ -52,15 +58,44 @@ function openCloseToggle(){
 //
 // });
 
+
+//
+// document.querySelectorAll('#night-Button').forEach(function(nightog){
+//   nightog.addEventListener("click", nightToggle);
+// })
+
 document.querySelectorAll('#night-Button').forEach(function(nightog){
-  nightog.addEventListener("click", nightToggle);
+  nightog.addEventListener("click", () => {
+    if (DAYNIGHTSTATE==0) {
+
+      localStorage.setItem("dayNightState", 1)
+      DAYNIGHTSTATE=1;
+        nightToggle()
+    }else {
+        DAYNIGHTSTATE=0
+      localStorage.setItem("dayNightState", 0)
+        nightToggle()
+    }
+
+  });
 })
 
 
 
 
 
+if (DAYNIGHTSTATE==1) {
+  nightToggle()
+}
+
+
+
+
+
 function nightToggle() {
+
+
+
   element.classList.toggle("modoNoche");
   carouselDiv.classList.toggle("carousel-night");
   li.classList.toggle("navigation");
@@ -69,4 +104,9 @@ function nightToggle() {
   trends.classList.toggle("modoNocheEtc");
   h2.classList.toggle("modoNocheEtc");
   searchBar.classList.toggle("modoNocheEtc");
+
+
+
+
+
 }
