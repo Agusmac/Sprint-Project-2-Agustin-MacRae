@@ -5,7 +5,7 @@ var GIFARRAY=JSON.parse(localStorage.getItem("favGifArray") || "[]");
 
 //
 // const MYGIFSARRAY=JSON.parse(localStorage.getItem("myGifsArray") || "[]");
-// const MYGIFSARRAY=["KziixzACFPdducqB42","gFQJ3JHKEgQO6PmJvU","jRlP4zbERYW5HoCLvX","9gkwDaCB4pmoOe73x2","H6F9hJE7UeRi05GLQz","3hyAe7gBLdG80","psd81figbUjTATdtx5","7G6xr45trmzsc"]
+// const MYGIFSARRAY=["KziixzACFPdducqB42","gFQJ3JHKEgQO6PmJvU","jRlP4zbERYW5HoCLvX","9gkwDaCB4pmoOe73x2","H6F9hJE7UeRi05GLQz","3hyAe7gBLdG80","psd81figbUjTATdtx5","7G6xr45trmzsc","LXH6tT5Q6MDFBRjYaC","gFQJ3JHKEgQO6PmJvU","AxZsOGPVDoVhjdueso","fTzV3m753QrFSkvrm5","VVtlbCuGiU68QWLaLj","1poTQPMLPQ2ekt01g4","kZu5IMsDPzHqlOpmme"]
 // console.log(JSON.stringify(MYGIFSARRAY))
 
 let MYGIFSARRAY=JSON.parse(localStorage.getItem("myGifsArray") || "[]");
@@ -309,7 +309,7 @@ function FavgifCreator(gifdata,where,arrayLength,startPoint){
 
 moreButton.addEventListener("click",  () => {
 limitAdd+=8
-      favoritesGifs(limitAdd)
+      getMyGifs(limitAdd)
       // moreButton.remove()
 });
 
