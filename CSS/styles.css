@@ -880,7 +880,7 @@ font-size: 1rem;
 
 
 .footer{
-    margin:2% 5%;
+    margin:20% 5%;
     flex-direction : row ;
     justify-content: center;
     flex-flow : wrap;
@@ -935,11 +935,16 @@ display: none;
 
 
 .numbers-div{
-margin-top: 400px;
-
+margin-top: 200px;
+margin-bottom: 100px;
 }
 
-
+.CreatorButton{
+  margin-top: 10%;
+  font-size: 1.5;
+  color:white;
+  width: 25%;
+}
 
 /* .autocom-list{
   padding-left: 8%;
