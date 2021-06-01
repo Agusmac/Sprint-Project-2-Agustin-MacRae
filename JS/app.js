@@ -9,7 +9,7 @@ const mobileMenu = document.querySelector(".mobile-menu");
 // const mobileLinks = document.querySelector(".mobile-links");
 const burguerIcon = document.querySelector(".fa-bars");
 // const heartLike = document.querySelector(".fa-heart");
-const nightButton =document.querySelector("#night-Button")
+const nightButton =document.querySelector(".night-Button")
 const carouselDiv=document.querySelector(".carousel-div")
 const element=document.querySelector("body")
 const h1=document.querySelector("h1")
@@ -64,7 +64,7 @@ function openCloseToggle(){
 //   nightog.addEventListener("click", nightToggle);
 // })
 
-document.querySelectorAll('#night-Button').forEach(function(nightog){
+document.querySelectorAll('.night-Button').forEach(function(nightog){
   nightog.addEventListener("click", () => {
     if (DAYNIGHTSTATE==0) {
 

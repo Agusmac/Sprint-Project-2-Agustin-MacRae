@@ -79,6 +79,14 @@ a {
 .mobile-menu{
   display: none;
 }
+
+.mobile-menu li{
+  border-bottom: 4px solid #fff;
+
+  margin: 5% 20%;
+}
+
+
 /*  */
 .hero{
   text-align: center;
