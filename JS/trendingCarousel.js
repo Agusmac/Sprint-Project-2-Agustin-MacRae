@@ -93,6 +93,25 @@ function gifCreator(gifdata,where,arrayLength,startPoint){
             fullsizeBut.classList.add("fullsize-but");
 
 
+downloadBut.addEventListener("click",downloadEvent)
+
+function downloadEvent(){
+            (async () => {
+              let a = document.createElement('a');
+              let response = await fetch(`${img.src}`);
+              let file = await response.blob();
+              a.download = 'myGif';
+              a.href = window.URL.createObjectURL(file);
+              a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+              a.click();
+            })();
+}
+
+
+
+
+
+
 
 
 
@@ -192,7 +211,7 @@ function gifCreator(gifdata,where,arrayLength,startPoint){
               let downloadButFulled = document.createElement("div");
               downloadButFulled.classList.add("download-but");
 
-
+downloadButFulled.addEventListener("click",downloadEvent)
               let heartIconFulled = document.createElement("i");
               heartIconFulled.classList.add("fa-heart");
 
@@ -278,6 +297,8 @@ function gifCreator(gifdata,where,arrayLength,startPoint){
 
 leftArrowButton.addEventListener("click", leftScroll)
 rightArrowButton.addEventListener("click", rightScroll)
+
+
 
 function leftScroll(){
     arrayLength--

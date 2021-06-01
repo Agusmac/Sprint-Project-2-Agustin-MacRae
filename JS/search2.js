@@ -81,8 +81,6 @@ function init(){
 function search(limitAdd){
     autoCompleteUl.innerHTML=""
 
-
-
   var limit=12+limitAdd;
 
 
@@ -135,6 +133,8 @@ for ( i = 0; i < limit; i++) {
       heartBut.classList.add("heart-but");
       let downloadBut = document.createElement("div");
       downloadBut.classList.add("download-but");
+      downloadBut.addEventListener("click",downloadEvent)
+
       let fullsizeBut = document.createElement("div");
       fullsizeBut.classList.add("fullsize-but");
       let fig = document.createElement("div");
@@ -157,6 +157,7 @@ for ( i = 0; i < limit; i++) {
       let downIcon = document.createElement("i");
       downIcon.classList.add("fa-download");
       downIcon.classList.add("fas");
+
       let fullIcon = document.createElement("i");
       fullIcon.classList.add("fa-expand-alt");
       fullIcon.classList.add("fas");
@@ -210,6 +211,7 @@ fullsizedDiv.innerHTML=""
     let downIconFulled = document.createElement("i");
     downIconFulled.classList.add("fa-download");
     downIconFulled.classList.add("fas");
+    downloadButFulled.addEventListener("click",downloadEvent)
 
     let cardButtonsFulled = document.createElement("div");
     cardButtonsFulled.classList.add("card-buttons-fulled");
@@ -259,6 +261,21 @@ fullsizedDiv.innerHTML=""
 
     }
 
+
+
+
+    function downloadEvent(){
+
+                (async () => {
+                  let a = document.createElement('a');
+                  let response = await fetch(`${content.data[0].images.original.url}`);
+                  let file = await response.blob();
+                  a.download = 'myGif';
+                  a.href = window.URL.createObjectURL(file);
+                  a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+                  a.click();
+                })();
+    }
 
 
 

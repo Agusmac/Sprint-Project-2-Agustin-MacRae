@@ -79,6 +79,8 @@ function FavgifCreator(gifdata,where,arrayLength,startPoint){
             heartBut.classList.add("heart-but");
             let downloadBut = document.createElement("div");
             downloadBut.classList.add("download-but");
+                downloadBut.addEventListener("click",downloadEvent)
+
             let fullsizeBut = document.createElement("div");
             fullsizeBut.classList.add("fullsize-but");
 
@@ -183,7 +185,7 @@ function FavgifCreator(gifdata,where,arrayLength,startPoint){
               heartButFulled.classList.add("heart-but");
               let downloadButFulled = document.createElement("div");
               downloadButFulled.classList.add("download-but");
-
+              downloadButFulled.addEventListener("click",downloadEvent)
 
               let heartIconFulled = document.createElement("i");
               heartIconFulled.classList.add("fa-heart");
@@ -255,6 +257,22 @@ function FavgifCreator(gifdata,where,arrayLength,startPoint){
                 })
 
               }
+
+          
+
+                  function downloadEvent(){
+
+                              (async () => {
+                                let a = document.createElement('a');
+                                let response = await fetch(`${gifdata[i].images.original.url}`);
+                                let file = await response.blob();
+                                a.download = 'myGif';
+                                a.href = window.URL.createObjectURL(file);
+                                a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+                                a.click();
+                              })();
+                  }
+
 
 
 
