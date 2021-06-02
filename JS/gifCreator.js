@@ -1,6 +1,9 @@
 const APIKEY = "e07ebX3PMa2lEvZbrG4m77OmMfvSSFS0";
 const myGifsArray=JSON.parse(localStorage.getItem("myGifsArray") || "[]");
 
+
+
+
 const creatorDiv=document.querySelector(".creator-div")
 const num1 = document.querySelector(".num1")
 const num2 = document.querySelector(".num2")

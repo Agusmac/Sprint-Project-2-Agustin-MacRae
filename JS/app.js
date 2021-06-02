@@ -1,9 +1,6 @@
 
 let DAYNIGHTSTATE=localStorage.getItem("dayNightState")|| 0;
 
-
-
-
 const hamburger = document.querySelector(".burguerMenu");
 const mobileMenu = document.querySelector(".mobile-menu");
 // const mobileLinks = document.querySelector(".mobile-links");
@@ -68,11 +65,32 @@ document.querySelectorAll('.night-Button').forEach(function(nightog){
   nightog.addEventListener("click", () => {
     if (DAYNIGHTSTATE==0) {
 
+try {
+
+    document.querySelector(".peliculaImg").src="IMG/pelicula-modo-noc.svg"
+  document.querySelector(".camaraImg").src="IMG/camara-modo-noc.svg"
+} catch (e) {
+  console.log(e)
+}
+
+
       localStorage.setItem("dayNightState", 1)
       DAYNIGHTSTATE=1;
         nightToggle()
+
     }else {
         DAYNIGHTSTATE=0
+
+        try {
+
+
+              document.querySelector(".peliculaImg").src="IMG/pelicula.svg"
+              document.querySelector(".camaraImg").src="IMG/camara.svg"
+        } catch (e) {
+          console.log(e)
+        }
+
+
       localStorage.setItem("dayNightState", 0)
         nightToggle()
     }
@@ -85,6 +103,15 @@ document.querySelectorAll('.night-Button').forEach(function(nightog){
 
 
 if (DAYNIGHTSTATE==1) {
+
+  try {
+
+      document.querySelector(".peliculaImg").src="IMG/pelicula-modo-noc.svg"
+    document.querySelector(".camaraImg").src="IMG/camara-modo-noc.svg"
+  } catch (e) {
+    console.log(e)
+  }
+
   nightToggle()
 }
 
