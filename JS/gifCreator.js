@@ -140,7 +140,7 @@ function tapeStart(){
 function tapeStop(){
     recorder.stopRecording(function() {
            let blob = recorder.getBlob();
-           invokeSaveAsDialog(blob);
+           // invokeSaveAsDialog(blob);
            let form = new FormData();
            form.append('file', recorder.getBlob(), 'myGif.gif');
            console.log(form.get('file'))
